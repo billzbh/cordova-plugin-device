@@ -2,6 +2,9 @@
 title: Device
 description: Get device information.
 ---
+
+## 注意：ios的UUID修改为使用广告AID
+
 <!--
 # license: Licensed to the Apache Software Foundation (ASF) under one
 #         or more contributor license agreements.  See the NOTICE file
