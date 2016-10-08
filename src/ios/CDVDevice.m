@@ -23,6 +23,7 @@
 
 #import <Cordova/CDV.h>
 #import "CDVDevice.h"
+#import  <AdSupport/AdSupport.h>
 
 @implementation UIDevice (ModelVersion)
 
@@ -81,13 +82,13 @@
 - (NSDictionary*)deviceProperties
 {
     UIDevice* device = [UIDevice currentDevice];
-
+    NSString *ADID =[[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     return @{
              @"manufacturer": @"Apple",
              @"model": [device modelVersion],
              @"platform": @"iOS",
              @"version": [device systemVersion],
-             @"uuid": [self uniqueAppInstanceIdentifier:device],
+             @"uuid": ADID,
              @"cordova": [[self class] cordovaVersion],
              @"isVirtual": @([self isVirtual])
              };
